@@ -165,7 +165,7 @@ public class CarDete{
     //main function
     public static void main(String[] args){
         while(cond==true){
-
+            System.out.println("Enter the details of the car,");
             enterDete();
 
         }
