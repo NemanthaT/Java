@@ -92,9 +92,6 @@ public class CarDete{
                     car.displayInfo();
                     searchRef();
                 }
-                else{
-                    System.out.println("Car not found.");
-                }
             }
         }
 
@@ -105,9 +102,6 @@ public class CarDete{
                 if(car.model==delmodl){
                     car.displayInfo();
                     searchRef();
-                }
-                else{
-                    System.out.println("Car not found.");
                 }
             }
         }
@@ -120,9 +114,6 @@ public class CarDete{
                     car.displayInfo();
                     searchRef(); 
                 }
-                else{
-                    System.out.println("Car not found.");
-                }
             }
         }
 
@@ -133,9 +124,6 @@ public class CarDete{
                 if(car.year==delyr){
                     car.displayInfo();
                     searchRef(); 
-                }
-                else{
-                    System.out.println("Car not found.");
                 }
             }
         }
