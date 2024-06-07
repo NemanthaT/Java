@@ -3,7 +3,7 @@ public class Car{
     String model;
     String color;
     int year;
-    int refno;
+    int refno=0;
 
     public Car(String name, String model, String color, int year, refno){
         this.name=name;
