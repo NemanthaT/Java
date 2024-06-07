@@ -3,9 +3,9 @@ public class Car{
     String model;
     String color;
     int year;
-    int refno=0;
+    int refno;
 
-    public Car(String name, String model, String color, int year, refno){
+    public Car(String name, String model, String color, int year, int refno){
         this.name=name;
         this.model=model;
         this.color=color;
@@ -19,5 +19,6 @@ public class Car{
         System.out.println("Model: " + model);
         System.out.println("Color: " + color);
         System.out.println("Year: " + year);
+        System.out.println("Reference Number: " + refno);
     }
 }
