@@ -1,3 +1,4 @@
+//Car class with name, model, color, year, and reference number as attributes
 public class Car{
     String name;
     String model;
@@ -5,6 +6,7 @@ public class Car{
     int year;
     int refno;
 
+    //constructor to initialize the attributes
     public Car(String name, String model, String color, int year, int refno){
         this.name=name;
         this.model=model;
@@ -13,6 +15,7 @@ public class Car{
         this.refno=refno;
     }
 
+    //function to display the details of the car
     public void displayInfo(){
         System.out.println("-----------------------------------");
         System.out.println("Name: " + name);
