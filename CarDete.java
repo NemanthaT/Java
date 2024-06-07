@@ -1,13 +1,15 @@
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.Scanner; //importing Scanner class
+import java.util.Stack; //importing Stack class
 
+//Car class
 public class CarDete{
 
-    static Stack<Car> carStack = new Stack<>();
-    static Stack<Car> tempcarStack = new Stack<>();
-    static boolean cond=true;
+    static Stack<Car> carStack = new Stack<>(); //creating a stack of Car objects
+    static Stack<Car> tempcarStack = new Stack<>(); //creating a temporary stack of Car objects
+    static boolean cond=true; //boolean variable to check the condition
     static int rfno=0;
 
+    //function to check the choice of the user
     public static boolean choice(char ch){
 
         if(ch=='y'){
@@ -19,6 +21,7 @@ public class CarDete{
         return cond;
     }
 
+    //function to enter the details of the car
     public static void enterDete(){
 
         Scanner scan= new Scanner(System.in);
@@ -51,8 +54,10 @@ public class CarDete{
         choice(ch);
     }
 
+    //function to search the car by reference number
     public static void searchRef(){
         Scanner delref= new Scanner(System.in);
+        System.out.print("Enter the reference number of the car you want to delete: ");
         int ref=delref.nextInt();
 
         for(Car car: carStack){
@@ -64,6 +69,7 @@ public class CarDete{
         System.out.println("Car details deleted successfully.");
     }
 
+    //function to delete the car by reference number
     public static void delRef(int ref){
         for(Car car: carStack){
             if(car.refno==ref){
@@ -72,6 +78,7 @@ public class CarDete{
         }
     }
 
+    //function to find the car to delete
     public static void deleteInfo(){
         Scanner delsc= new Scanner(System.in);
         Scanner delch= new Scanner(System.in);
@@ -147,6 +154,7 @@ public class CarDete{
 
     }
 
+    //function to print the car details
     public static void printCarStack(Stack<Car> carStack){
         for (Car car : carStack){
             car.displayInfo();
@@ -154,6 +162,7 @@ public class CarDete{
         }
     }
 
+    //main function
     public static void main(String[] args){
         while(cond==true){
 
