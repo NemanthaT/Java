@@ -74,6 +74,7 @@ public class CarDete{
 
     public static void deleteInfo(){
         Scanner delsc= new Scanner(System.in);
+        Scanner delch= new Scanner(System.in);
         String delnam;
         String delmodl;
         String delclr;
@@ -81,7 +82,7 @@ public class CarDete{
 
         System.out.println("Enter the details of the car you want to delete: ");
         System.out.print("Enter the detail that you going to search to find the car( Name=n, Model=m, Color=c, Year=y): ");
-        String dels= delsc.nextLine();
+        String dels= delch.nextLine();
         char del=dels.charAt(0);
 
         if(del=='n'){
@@ -91,6 +92,9 @@ public class CarDete{
                 if(car.name==delnam){
                     car.displayInfo();
                     searchRef();
+                }
+                else{
+                    System.out.println("Car not found.");
                 }
             }
         }
@@ -103,6 +107,9 @@ public class CarDete{
                     car.displayInfo();
                     searchRef();
                 }
+                else{
+                    System.out.println("Car not found.");
+                }
             }
         }
 
@@ -114,6 +121,9 @@ public class CarDete{
                     car.displayInfo();
                     searchRef(); 
                 }
+                else{
+                    System.out.println("Car not found.");
+                }
             }
         }
 
@@ -124,6 +134,9 @@ public class CarDete{
                 if(car.year==delyr){
                     car.displayInfo();
                     searchRef(); 
+                }
+                else{
+                    System.out.println("Car not found.");
                 }
             }
         }
