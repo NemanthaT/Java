@@ -8,6 +8,7 @@ public class CarDete{
     static Stack<Car> tempcarStack = new Stack<>(); //creating a temporary stack of Car objects
     static boolean cond=true; //boolean variable to check the condition
     static int rfno=0;
+    static int ref;
 
     //function to check the choice of the user
     public static boolean choice(char ch){
@@ -58,15 +59,13 @@ public class CarDete{
     public static void searchRef(){
         Scanner delref= new Scanner(System.in);
         System.out.print("Enter the reference number of the car you want to delete: ");
-        int ref=delref.nextInt();
+        ref=delref.nextInt();
 
         for(Car car: carStack){
             if(car.refno==ref){
                 car.displayInfo();
             }
-        }
-        delRef(ref);
-        System.out.println("Car details deleted successfully.");
+        }      
     }
 
     //function to delete the car by reference number
@@ -74,20 +73,22 @@ public class CarDete{
         for(Car car: carStack){
             if(car.refno==ref){
                 carStack.remove(car);
+                System.out.println("Car details deleted successfully.");
             }
         }
     }
 
     //function to find the car to delete
-    public static void deleteInfo(){
+    public static void searchInfo(){
         Scanner delsc= new Scanner(System.in);
         Scanner delch= new Scanner(System.in);
         String delnam;
         String delmodl;
         String delclr;
         int delyr;
+        int ind=0;
 
-        System.out.println("Enter the details of the car you want to delete: ");
+        System.out.println("Enter the details of the car you want to Search, ");
         System.out.print("Enter the detail that you going to search to find the car( Name=n, Model=m, Color=c, Year=y): ");
         String dels= delch.nextLine();
         char del=dels.charAt(0);
@@ -97,13 +98,18 @@ public class CarDete{
             delnam=delsc.nextLine();
             for(Car car: carStack){
                 if(car.name==delnam){
+                    ind++;
                     car.displayInfo();
-                    searchRef();
-                }
-                else{
-                    System.out.println("Car not found.");
+                    
                 }
             }
+            if(ind==0){
+                System.out.println("Car not found.");
+            }
+            else{
+                searchRef();
+            }
+            
         }
 
         else if(del=='m'){
@@ -111,12 +117,16 @@ public class CarDete{
             delmodl=delsc.nextLine();
             for(Car car: carStack){
                 if(car.model==delmodl){
+                    ind++;
                     car.displayInfo();
-                    searchRef();
+
                 }
-                else{
-                    System.out.println("Car not found.");
-                }
+            }
+            if(ind==0){
+                System.out.println("Car not found.");
+            }
+            else{
+                searchRef();
             }
         }
 
@@ -125,12 +135,17 @@ public class CarDete{
             delclr=delsc.nextLine();
             for(Car car: carStack){
                 if(car.color==delclr){
+                    ind++;
                     car.displayInfo();
-                    searchRef(); 
+ 
                 }
-                else{
-                    System.out.println("Car not found.");
-                }
+
+            }
+            if(ind==0){
+                System.out.println("Car not found.");
+            }
+            else{
+                searchRef();
             }
         }
 
@@ -139,17 +154,21 @@ public class CarDete{
             delyr=delsc.nextInt();
             for(Car car: carStack){
                 if(car.year==delyr){
+                    ind++;
                     car.displayInfo();
-                    searchRef(); 
+
                 }
-                else{
-                    System.out.println("Car not found.");
-                }
+            }
+            if(ind==0){
+                System.out.println("Car not found.");
+            }
+            else{
+                searchRef();
             }
         }
         else{
             System.out.println("Invalid input.Enter valid input.");
-            deleteInfo();
+            searchInfo();
         }
 
     }
@@ -174,7 +193,8 @@ public class CarDete{
         System.out.println("Car details,");
         printCarStack(carStack);
         
-        deleteInfo();
+        searchInfo();
+        delRef(ref);
         System.out.println("Car details, after deletion,");
         printCarStack(carStack);
     }
