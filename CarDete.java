@@ -72,8 +72,9 @@ public class CarDete{
     public static void delRef(int ref){
         int indi=0;
         while(!(carStack.isEmpty())){
+            Car car= carStack.pop();
             if(!(car.refno==ref)){
-                tempcarStack.push(carStack.pop());
+                tempcarStack.push(car);
                 indi++;
             }
         }
