@@ -1,3 +1,5 @@
+//Final Version
+
 import java.util.Scanner; //importing Scanner class
 import java.util.Stack; //importing Stack class
 
@@ -86,7 +88,7 @@ public class CarDete{
             carStack.push(tempcarStack.pop());
         }
         tempcarStack.clear();
-        
+
         if(indi==0){
             System.out.println("Car not found.");
         }
@@ -108,6 +110,9 @@ public class CarDete{
         System.out.println("Enter the details of the car you want to Search, ");
         System.out.print("Enter the detail that you going to search to find the car( Name= n, Model= m, Color= c, Year= y): ");
         String dels= delch.nextLine();
+        System.out.println("+++++++++++++++++++++++++++++++++++");
+        System.out.println("Car details,");
+        System.out.println(" ");
         char del=dels.charAt(0);
 
         if(del=='n'){
@@ -115,15 +120,12 @@ public class CarDete{
             delnam=delsc.nextLine();
             for(Car car: carStack){
                 if((car.name).equals(delnam)){
-                    ind++;
-                    System.out.println("+++++++++++++++++++++++++++++++++++");
-                    System.out.println("Status: Car found.");
+                    ind++;                   
                     car.displayInfo();
                     
                 }
             }
             if(ind==0){
-                System.out.println("+++++++++++++++++++++++++++++++++++");
                 System.out.println("Status: Car not found.");
             }
             else{
@@ -138,14 +140,11 @@ public class CarDete{
             for(Car car: carStack){
                 if((car.model).equals(delmodl)){
                     ind++;
-                    System.out.println("+++++++++++++++++++++++++++++++++++");
-                    System.out.println("Status: Car found.");
                     car.displayInfo();
 
                 }
             }
             if(ind==0){
-                System.out.println("+++++++++++++++++++++++++++++++++++");
                 System.out.println("Status: Car not found.");
             }
             else{
@@ -159,15 +158,12 @@ public class CarDete{
             for(Car car: carStack){
                 if((car.color).equals(delclr)){
                     ind++;
-                    System.out.println("+++++++++++++++++++++++++++++++++++");
-                    System.out.println("Status: Car found.");
                     car.displayInfo();
  
                 }
 
             }
             if(ind==0){
-                System.out.println("+++++++++++++++++++++++++++++++++++");
                 System.out.println("Status: Car not found.");
             }
             else{
@@ -181,14 +177,11 @@ public class CarDete{
             for(Car car: carStack){
                 if(car.year==delyr){
                     ind++;
-                    System.out.println("+++++++++++++++++++++++++++++++++++");
-                    System.out.println("Status: Car found.");
                     car.displayInfo();
 
                 }
             }
             if(ind==0){
-                System.out.println("+++++++++++++++++++++++++++++++++++");
                 System.out.println("Status: Car not found.");
             }
             else{
@@ -196,7 +189,6 @@ public class CarDete{
             }
         }
         else{
-            System.out.println("+++++++++++++++++++++++++++++++++++");
             System.out.println("Invalid input.Enter valid input.");
             searchInfo();
         }
