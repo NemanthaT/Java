@@ -97,7 +97,7 @@ public class CarDete{
             System.out.print("Enter Car name: ");
             delnam=delsc.nextLine();
             for(Car car: carStack){
-                if(car.name==delnam){
+                if((car.name).equals(delnam)){
                     ind++;
                     car.displayInfo();
                     
@@ -116,7 +116,7 @@ public class CarDete{
             System.out.print("Enter Car Model: ");
             delmodl=delsc.nextLine();
             for(Car car: carStack){
-                if(car.model==delmodl){
+                if((car.model).equals(delmodl)){
                     ind++;
                     car.displayInfo();
 
@@ -134,7 +134,7 @@ public class CarDete{
             System.out.print("Enter Car Color: ");
             delclr=delsc.nextLine();
             for(Car car: carStack){
-                if(car.color==delclr){
+                if((car.color).equals(delclr)){
                     ind++;
                     car.displayInfo();
  
@@ -150,7 +150,7 @@ public class CarDete{
         }
 
         else if(del=='y'){
-            System.out.print("Enter Car Color: ");
+            System.out.print("Enter Manufactured Year: ");
             delyr=delsc.nextInt();
             for(Car car: carStack){
                 if(car.year==delyr){
@@ -195,6 +195,7 @@ public class CarDete{
         
         searchInfo();
         delRef(ref);
+        System.out.println("\n");
         System.out.println("Car details, after deletion,");
         printCarStack(carStack);
     }
