@@ -16,8 +16,11 @@ public class CarDete{
         if(ch=='y'){
             enterDete();
         }
-        else{
+        else if(ch=='n'){
             cond=false;
+        }
+        else{
+            choice(ch);
         }
         return cond;
     }
