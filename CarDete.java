@@ -70,11 +70,23 @@ public class CarDete{
 
     //function to delete the car by reference number
     public static void delRef(int ref){
-        for(Car car: carStack){
-            if(car.refno==ref){
-                carStack.remove(car);
-                System.out.println("Car details deleted successfully.");
+        int indi=0;
+        while(!(carStack.isEmpty())){
+            if(!(car.refno==ref)){
+                tempcarStack.push(carStack.pop());
+                indi++;
             }
+        }
+        System.out.println("indi= "+ indi);
+        while(!(tempcarStack.isEmpty())){
+            carStack.push(tempcarStack.pop());
+        }
+        tempcarStack.clear();
+        if(indi==0){
+            System.out.println("Car not found.");
+        }
+        else{
+            System.out.println("Car deleted successfully.");
         }
     }
 
