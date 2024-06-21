@@ -9,19 +9,24 @@ public class P3q5{
 		String dupSent = String.valueOf(mySent);
 		Stack<Character> newSent = new Stack<>();
 		int i=0;
-		int j=0;
 		int r=0;
 		char c=' ';
+		newSent.push(mySent.charAt(0));
 		
 		for(i=0;i<mySent.length();i++){
-			for(j=0;j<mySent.length();j++){
-				if (mySent.charAt(i)!=dupSent.charAt(j)){
-					c = mySent.charAt(i);
-					//String ch = c;
-						
+			for(char j: newSent){
+				if (mySent.charAt(i)!=j){
+					System.out.println("i: "+mySent.charAt(i)+" j: "+j);
+					c=mySent.charAt(i);
+					System.out.println("c: "+ mySent.charAt(i));			
+				}
+				else{
+					continue;
 				}
 				newSent.push(c);
-			}	
+				
+			}
+				
 			
 		}
 		System.out.print("Modified: ");
