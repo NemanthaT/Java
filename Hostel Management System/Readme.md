@@ -1,0 +1,1 @@
+This contains a console application for Hostel Management System. No database implications
