@@ -106,7 +106,7 @@ public class Main {
 
         public static void main(String[] args) {
 
-            int ch = 0;
+            int ch = 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ;
             boolean con = true;
             //Database connection
             Connection connection = null;
