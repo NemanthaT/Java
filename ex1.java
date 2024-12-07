@@ -39,6 +39,12 @@ public class ex1{
         System.out.println("i = " + i);
 
         power();
+        int j=5;
+        double k=3.14;
+        System.out.println(j+k);
+        int x=60;
+        String y = (x>75)?"i60":(x>50)?"a80":"p100";
+        System.out.println(y);
 
     }
 }
